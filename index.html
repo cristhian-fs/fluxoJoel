@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Estratégias de Vendas</title>
+  <!-- Insira o link para o seu arquivo CSS aqui -->
+</head>
+
+<body>
+
+  <div id="quiz-container">
+    <div class="question" id="question-how-sell">
+      <p>Como você pretende vender?</p>
+      <button onclick="selectOption('option-a')">Posso até usar minha imagem, mas não quero Instagram</button>
+      <button onclick="selectOption('option-b')">100% sem aparecer</button>
+      <button onclick="selectOption('option-c')">Quero aparecer e me posicionar como autoridade</button>
+    </div>
+
+    <!-- Opção A -->
+    <div class="question" id="option-a" style="display:none;">
+      <p>Você deseja fazer o atendimento pelo WhatsApp e ter mais chances de vender do que pelo tráfego direto (considerando um mesmo orçamento)?</p>
+      <button onclick="selectOption('option-a-whatsapp-yes')">Sim, quero aprender dessa forma pelo WhatsApp</button>
+      <button onclick="selectOption('option-a-whatsapp-no')">Não, não quero ter que falar com ninguém pelo WhatsApp</button>
+      <button onclick="selectOption('option-a-whatsapp-no')">Não, não quero ter que falar com ninguém pelo WhatsApp</button>
+      <button onclick="goBack('question-how-sell')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção A - WhatsApp Sim -->
+    <div class="question" id="option-a-whatsapp-yes" style="display:none;">
+      <p>Você tem o valor mínimo ideal de investimento de R$50,00 para que essa rota possa te levar aos primeiros resultados? (Esse valor é o total do orçamento e não orçamento diário)</p>
+      <button onclick="selectOption('route2')">Sim, já tenho</button>
+      <button onclick="selectOption('route4')">Não, ainda não tenho</button>
+      <button onclick="goBack('option-a')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção A - WhatsApp Não -->
+    <div class="question" id="option-a-whatsapp-no" style="display:none;">
+      <p>Você tem o valor mínimo ideal de investimento de R$200,00 para que essa rota possa te levar aos primeiros resultados? (Esse valor é o total do orçamento e não orçamento diário)</p>
+      <button onclick="selectOption('option-a-200-yes')">Sim, já tenho</button>
+      <button onclick="selectOption('option-a-200-no')">Não, ainda não tenho</button>
+      <button onclick="goBack('option-a')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção A - 200 Sim -->
+    <div class="question" id="option-a-200-yes" style="display:none;">
+      <p>Para essa rota, é recomendado que você tenha um computador! Caso você não tenha ainda, o ideal é que comece por outra rota até levantar o valor necessário para fazer o investimento em um computador. Você tem um computador para começar nessa rota da maneira correta?</p>
+      <button onclick="selectOption('route1')">Sim, já tenho</button>
+      <button onclick="selectOption('option-a-computer-no')">Não, ainda não tenho</button>
+      <button onclick="goBack('option-a-whatsapp-no')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção A - Sem Computador -->
+    <div class="question" id="option-a-computer-no" style="display:none;">
+      <p>O que você prefere fazer?</p>
+      <button onclick="selectOption('route1')">Começar sem um computador mesmo</button>
+      <button onclick="selectOption('route4')">Aprender estratégias para levantar caixa</button>
+      <button onclick="selectOption('route2')">Começar pela estratégia de tráfego pago para X1</button>
+      <button onclick="goBack('option-a-200-yes')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção A - 200 Não -->
+    <div class="question" id="option-a-200-no" style="display:none;">
+      <p>O que você prefere fazer?</p>
+      <button onclick="selectOption('route4')">Aprender estratégias para levantar caixa</button>
+      <button onclick="selectOption('route2')">Começar pela estratégia de tráfego pago para X1</button>
+      <button onclick="goBack('option-a-whatsapp-no')" class="voltar">Voltar</button>
+    </div>
+
+
+    <!-- Opção B -->
+    <div class="question" id="option-b" style="display:none;">
+      <p>Você deseja fazer o atendimento pelo WhatsApp e ter mais chances de vender do que pelo tráfego direto (considerando um mesmo orçamento)?</p>
+      <button onclick="selectOption('option-b-whatsapp-yes')">Sim, quero aprender dessa forma pelo WhatsApp</button>
+      <button onclick="selectOption('option-b-whatsapp-no')">Não, não quero ter que falar com ninguém pelo WhatsApp</button>
+      <button onclick="goBack('question-how-sell')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção B - WhatsApp Sim -->
+    <div class="question" id="option-b-whatsapp-yes" style="display:none;">
+      <p>Deseja usar o Instagram para potencializar os seus resultados (sem aparecer)?</p>
+      <button onclick="selectOption('option-b-instagram-no')">Não, não quero criar nenhum tipo de conteúdo</button>
+      <button onclick="selectOption('option-b-instagram-yes')">Sim, quero usar o Instagram para vender ainda mais</button>
+      <button onclick="goBack('option-b')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção B - Instagram Não -->
+    <div class="question" id="option-b-instagram-no" style="display:none;">
+      <p>Você tem o valor mínimo ideal de investimento de R$50,00 para que essa rota possa te levar aos primeiros resultados? (Esse valor é o total do orçamento e não orçamento diário)</p>
+      <button onclick="selectOption('route2')">Sim, já tenho</button>
+      <button onclick="selectOption('route4')">Não, ainda não tenho</button>
+      <button onclick="goBack('option-b-whatsapp-yes')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção B - Instagram Sim -->
+    <div class="question" id="option-b-instagram-yes" style="display:none;">
+      <p>Você tem o valor mínimo ideal de investimento de R$80,00 para que essa rota possa te levar aos primeiros resultados? (Esse valor é o total do orçamento e não orçamento diário)</p>
+      <button onclick="selectOption('route3')">Sim, já tenho</button>
+      <button onclick="selectOption('route4')">Não, ainda não tenho</button>
+      <button onclick="goBack('option-b-whatsapp-yes')" class="voltar">Voltar</button>
+    </div>
+
+    <!-- Opção B - WhatsApp Não -->
+    <div class="question" id="option-b-whatsapp-no" style="display:none;">
+      <!-- Mesmo conteúdo da opção A - WhatsApp Não -->
+      <button onclick="goBack('option-b')" class="voltar">Voltar</button>
+    </div>
+
+
+    <!-- Opção C -->
+    <div class="question" id="option-c" style="display:none;">
+      <p>Você tem o valor mínimo ideal de investimento de R$80,00 para que essa rota possa te levar aos primeiros resultados? (Esse valor é o total do orçamento e não orçamento diário)</p>
+      <button onclick="selectOption('route3')">Sim, já tenho</button>
+      <button onclick="selectOption('route4')">Não, ainda não tenho</button>
+    </div>
+
+    <!-- Rotas -->
+    <div id="route1" class="result" style="display:none;">
+      <p><strong>ROTA 1</strong></p>
+      <a href="caminho/do/seu/arquivo.zip" download="nome-do-arquivo.zip">
+        <button type="button">Baixar Arquivo</button>
+      </a>
+      <button onclick="goBack()" class="voltar">Voltar</button>
+    </div>
+    <div id="route2" class="result" style="display:none;">
+      <p><strong>ROTA 2</strong></p>
+      <a href="caminho/do/seu/arquivo.zip" download="nome-do-arquivo.zip">
+        <button type="button">Baixar Arquivo</button>
+      </a>
+      <button onclick="goBack()" class="voltar">Voltar</button>
+    </div>
+    <div id="route3" class="result" style="display:none;">
+      <p><strong>ROTA 3</strong></p>
+      <a href="caminho/do/seu/arquivo.zip" download="nome-do-arquivo.zip">
+        <button type="button">Baixar Arquivo</button>
+      </a>
+      <button onclick="goBack()" class="voltar">Voltar</button>
+    </div>
+    <div id="route4" class="result" style="display:none;">
+      <p><strong>ROTA 4</strong></p>
+      <a href="caminho/do/seu/arquivo.zip" download="nome-do-arquivo.zip">
+        <button type="button">Baixar Arquivo</button>
+      </a>
+      <button onclick="goBack()" class="voltar">Voltar</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // Esconde todas as seções quando a página é carregada.
+      hideAllSections();
+      // Mostra apenas a primeira pergunta.
+      document.getElementById('question-how-sell').style.display = 'block';
+    });
+
+    function hideAllSections() {
+      var allSections = document.querySelectorAll('.question, .result');
+      allSections.forEach(function (section) {
+        section.style.display = 'none';
+      });
+    }
+    var sectionHistory = []
+
+    function selectOption(optionId) {
+      hideAllSections();
+      var nextSection = document.getElementById(optionId);
+      if (nextSection) {
+        nextSection.style.display = 'block';
+        // Adiciona ao histórico somente se avançar para uma nova seção
+        if (sectionHistory.length === 0 || sectionHistory[sectionHistory.length - 1] !== optionId) {
+          sectionHistory.push(optionId);
+        }
+      }
+    }
+
+    function goBack(id) {
+      hideAllSections();
+      if (!id && sectionHistory.length > 1) {
+        // Se não há ID, use o histórico apenas se houver mais de uma entrada
+        sectionHistory.pop(); // Remove a seção atual
+        id = sectionHistory[sectionHistory.length - 1] // Obtém a seção anterior
+      }
+      var previousSection = document.getElementById(id);
+      if (previousSection) {
+        previousSection.style.display = 'block';
+      }
+    }
+
+    console.log(history.length)
+  </script>
+
+</body>
+
+</html>
